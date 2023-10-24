@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>OCR App</title>
+</head>
+<body>
+    <h1>List of TIFF files</h1>
+    <ul>
+        {% for file in files %}
+            <li>
+                {{ file }} - 
+                <a target="_blank" href="{{ url_for('generate_ocr', filename=file) }}">Generate OCR</a> | 
+                <a target="_blank" href="{{ url_for('generate_ocr_translated', filename=file) }}">Generate Translated OCR</a>
+            </li>
+        {% endfor %}
+    </ul>
+</body>
+</html>
